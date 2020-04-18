@@ -86,6 +86,7 @@
     <ClInclude Include="rmsd.cuh" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="README.md" />
     <Text Include="structure1.txt" />
     <Text Include="structure2.txt" />
   </ItemGroup>
