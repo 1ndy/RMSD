@@ -79,8 +79,10 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PointReader.cpp" />
+    <ClCompile Include="rmsd.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="rmsd.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="PointReader.h" />
     <ClInclude Include="rmsd.cuh" />
