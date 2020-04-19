@@ -14,8 +14,7 @@ be passed to the actual RMSD functions.
 There is both a CPU and GPU version of the RMSD function. The 
 CPU one is faster, CUDA doesnt provide a reduce operation so
 it's not really a great choice for this. I wanted to practice 
-writing GPU code anyway. The gpu version does not correctly 
-compute the RMSD with a large quantity of input values (10k).
+writing GPU code anyway.
 
 In addition to adding `.pdb` support, I want to create a way to
 minimize the RMSD between two structures. That may actually benefit 
