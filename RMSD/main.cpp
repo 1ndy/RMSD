@@ -7,11 +7,6 @@
 #include "rmsd.cuh"
 #include "rmsd.h"
 
-double compute_rmsd_cpu(std::vector<point*> s1, std::vector<point*> s2);
-int sumPointDistances(std::vector<point*> s1, std::vector<point*> s2);
-int distanceBetweenTwoPoints(point* p1, point* p2);
-int distanceBetweenTwoCoordsSquared(int c1, int c2);
-
 int main() {
 	std::string fname1 = "structure1.txt";
 	std::string fname2 = "structure2.txt";
@@ -24,7 +19,7 @@ int main() {
 
 
 	auto cpu_start_time = std::chrono::high_resolution_clock::now();
-	double rmsd = compute_rmsd_cpu(points1, points2);
+	float rmsd = compute_rmsd_cpu(points1, points2);
 	auto cpu_stop_time = std::chrono::high_resolution_clock::now();
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(cpu_stop_time - cpu_start_time);
 

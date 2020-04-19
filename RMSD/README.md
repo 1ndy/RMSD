@@ -2,7 +2,7 @@
 This tool computes the root-mean-square deviation 
 between two sets of points. This is useful for comparing 
 the similarity of atomic structres, and is used to find
-homologous protein structures
+homologous protein structures.
 
 ### The code
 I have written a small class to read in my fake data. The 

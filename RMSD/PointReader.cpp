@@ -17,7 +17,7 @@ PointReader::PointReader(std::string fname) {
 		while (!file.eof()) {
 			file.getline(input, LINE_SIZE - 1);
 			point* p = new point;
-			read_len = sscanf(input, "%d %d %d", &(p->x), &(p->y), &(p->z));
+			read_len = sscanf(input, "%f %f %f", &(p->x), &(p->y), &(p->z));
 			if (read_len != 3) {
 				fprintf(stderr, "Error in file on line %d\n", line_number);
 			}

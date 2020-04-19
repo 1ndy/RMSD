@@ -1,6 +1,6 @@
 #pragma once
 struct point {
-	int x;
-	int y;
-	int z;
+	float x;
+	float y;
+	float z;
 };
