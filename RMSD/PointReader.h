@@ -13,7 +13,6 @@ class PointReader
 {
 public:
 	PointReader(std::string fname);
-	//int getPoints(point** r);
 	std::vector<point*> getPoints();
 private:
 	std::vector<point*> points;

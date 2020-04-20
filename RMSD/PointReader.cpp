@@ -30,26 +30,6 @@ PointReader::PointReader(std::string fname) {
 	}
 }
 
-
-//converts the list of points to an array of struct (pointers)
-/*
-int PointReader::getPoints(point** r) {
-	if (r == NULL) return 0;
-	point* p;
-	int length = (int)points->size();
-	r = (point**)malloc(sizeof(point*) * length);
-	for (int i = length - 1; i >= 0; i--) {
-		r[i] = (point*)malloc(sizeof(point*));
-		p = points->back();
-		r[i]->x = p->x;
-		r[i]->y = p->y;
-		r[i]->z = p->z;
-		points->pop_back();
-	}
-	return length;
-}
-*/
-
 std::vector<point*> PointReader::getPoints() {
 	return points;
 }

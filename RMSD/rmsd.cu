@@ -13,7 +13,6 @@ float compute_rmsd_gpu(std::vector<point*> s1, std::vector<point*> s2) {
 	int size = min + (128 - min % 128); //make it an even multiple of 128 for cuda
 	threadsPerBlock = std::min(size, 128);
 	blocksPerGrid = size / threadsPerBlock;
-	printf("Running CUDA with %d threads and %d blocks on %d points\n", threadsPerBlock, blocksPerGrid, min);
 
 	float* h_s1Ax = (float*)calloc(size, sizeof(point));
 	float* h_s1Ay = (float*)calloc(size, sizeof(point));
@@ -84,6 +83,23 @@ float compute_rmsd_gpu(std::vector<point*> s1, std::vector<point*> s2) {
 		sum += results[i];
 	}
 
+	//free all the gpu and host memory
+	free(h_s1Ax);
+	free(h_s1Ay);
+	free(h_s1Az);
+
+	free(h_s2Ax);
+	free(h_s2Ay);
+	free(h_s2Az);
+
+	cudaFree(d_s1Ax);
+	cudaFree(d_s1Ay);
+	cudaFree(d_s1Az);
+
+	cudaFree(d_s2Ax);
+	cudaFree(d_s2Ay);
+	cudaFree(d_s2Az);
+
 	float radicand = n_inverse * float(sum);
 	return sqrt(radicand);
 }
@@ -99,6 +115,5 @@ void sumPointDistancesGPU(float* s1x, float* s1y, float* s1z, float* s2x, float*
 	float z2 = s2z[i];
 
 	float distance = (x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2) + (z1 - z2)*(z1 - z2);
-	//printf("distance between (%d, %d, %d) and (%d, %d, %d): %d\n", x1, y1, z1, x2, y2, z2, distance);
 	r[i] = distance;
 }
