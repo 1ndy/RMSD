@@ -78,10 +78,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="matrix_utils.cpp" />
     <ClCompile Include="PointReader.cpp" />
     <ClCompile Include="rmsd.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="matrix_utils.h" />
     <ClInclude Include="rmsd.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="PointReader.h" />
